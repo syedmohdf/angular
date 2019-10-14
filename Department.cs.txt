@@ -1,0 +1,11 @@
+using System;
+using System.Collections.Generic;
+
+namespace testwebapi.Models.DB
+{
+    public partial class Department
+    {
+        public string id { get; set; }
+        public string DeptName { get; set; }
+    }
+}

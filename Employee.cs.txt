@@ -1,0 +1,14 @@
+using System;
+using System.Collections.Generic;
+
+namespace testwebapi.Models.DB
+{
+    public partial class Employee
+    {
+        public string Id { get; set; }
+        public string Fname { get; set; }
+        public string Lname { get; set; }
+        public int? DeptId { get; set; }
+        public string ManagerId { get; set; }
+    }
+}

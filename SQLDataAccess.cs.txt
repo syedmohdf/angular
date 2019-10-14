@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using testwebapi.Controllers;
+using testwebapi.Models.DB;
+
+namespace testwebapi
+{
+    public class SQLDataAccess : IEmployeeRepo
+    {
+        EmployeeContext _dbcontext;
+        public SQLDataAccess(EmployeeContext dbcontext)
+        {
+            _dbcontext = dbcontext;
+        }
+
+        public string AddEmployee(Employee e)
+        {
+            _dbcontext.Employee.Add(e);
+            _dbcontext.SaveChanges();
+            return "employee added";
+        }
+
+        public List<Employee> GetAllEmployees()
+        {
+            return _dbcontext.Employee.Select(e => e).ToList();
+        }
+
+        public Employee GetAnEmployee(string id)
+        {
+            return _dbcontext.Employee.SingleOrDefault(e => e.Id == id);
+        }
+
+        public string RemoveEmployee(string id)
+        {
+            _dbcontext.Employee.Remove(GetAnEmployee(id));
+            _dbcontext.SaveChanges();
+            return "deleted";
+        }
+    }
+}
