@@ -1,0 +1,4 @@
+<mat-toolbar color="primary">Angular App</mat-toolbar>
+<br>
+<app-create-emp></app-create-emp>
+<app-listofemployee></app-listofemployee>

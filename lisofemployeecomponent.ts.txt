@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+import { employeeservices } from '../employeeservices';
+import { employee } from '../models/employee';
+
+
+@Component({
+  selector: 'app-listofemployee',
+  templateUrl: './listofemployee.component.html',
+  styleUrls: ['./listofemployee.component.css'],
+
+})
+export class ListofemployeeComponent implements OnInit {
+
+  listofemployees: any;
+
+  constructor(private empServ: employeeservices) { }
+
+  ngOnInit() {
+    this.empServ.GetAllEmployee().subscribe((data) => { this.listofemployees = data; });
+  }
+ 
+}

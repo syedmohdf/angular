@@ -1,0 +1,48 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { ServerComponent } from './ServerComponent/Sever.Component';
+import { CreateEmpComponent } from './create-emp/create-emp.component';
+import {FormsModule} from '@angular/forms';
+import { ListofemployeeComponent } from './listofemployee/listofemployee.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import { employeeservices } from './employeeservices';
+import {MatButtonModule} from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ServerComponent,
+    CreateEmpComponent,
+    ListofemployeeComponent,
+   
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatListModule,
+    MatCardModule,
+    MatButtonModule,
+    HttpClientModule
+  ],
+  providers: [employeeservices],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

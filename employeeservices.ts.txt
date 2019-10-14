@@ -1,0 +1,30 @@
+import{ employee } from'./Models/employee';
+import { Injectable } from '@angular/core';
+import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
+@Injectable()
+export class employeeservices{
+
+    constructor(private http : HttpClient){
+
+    }
+
+    GetAllEmployee(){
+        return this.http.get("https://localhost:44352/api/Employee/GetAllEmployee");
+
+    }
+    AddEmployee(emp:any){
+        
+        console.log(emp);
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        };
+        this.http.post("https://localhost:44352/api/Employee/AddEmployee", emp, httpOptions)
+            .toPromise()
+            .then((data) => console.log(data))
+            .catch(e => console.log(e))
+            .finally(()=>this.GetAllEmployee());
+
+    }
+}

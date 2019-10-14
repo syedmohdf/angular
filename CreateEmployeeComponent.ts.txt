@@ -1,0 +1,50 @@
+import { Component, OnInit } from '@angular/core';
+import { employee } from '../models/employee';
+import { employeeservices } from '../employeeservices';
+
+@Component({
+  selector: 'app-create-emp',
+  templateUrl: './create-emp.component.html',
+  styleUrls: ['./create-emp.component.css']
+})
+export class CreateEmpComponent implements OnInit {
+
+  fname="";
+  lname=""; 
+  id="";
+  isdisabled = true;
+  listofdept=["MIT","WMIT","ITAR","DBIT"];
+constructor(private empServ:employeeservices) {
+  setTimeout(() => this.isdisabled = false, 2000);
+
+}
+
+disableagain() {
+  this.fname = "";
+  this.lname = "";
+  }
+
+DisplayInfo1(parameter1){
+  console.log(parameter1.target.value);
+}
+DisplayInfo2(parameter2){
+  console.log(parameter2.target.value);
+}
+show()
+{ console.log("Invoked");
+  if(this.fname.length<3)
+    return false;
+  else return true;
+}
+
+  ngOnInit() {
+  }
+  AddEmployee() {
+    this.empServ.AddEmployee({ fname: this.fname, lname: this.lname, id: "be1925",dept:"fgdf",mgr:"dfgf"}) 
+   
+  }
+
+}
+
+
+

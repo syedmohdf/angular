@@ -1,0 +1,5 @@
+export class employee{
+    fname:string;
+    lname:string;
+    id:string;
+}

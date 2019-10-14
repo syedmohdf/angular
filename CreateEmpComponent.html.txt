@@ -1,0 +1,46 @@
+
+
+<table class="example-full-width" cellspacing="0">
+    <tr>
+        <td>
+            <mat-form-field class="example-full-width">
+                    <input matInput placeholder="First name" [(ngModel)]="fname" />
+            </mat-form-field>
+        </td>
+        <td>
+            <mat-form-field class="example-full-width">
+                    <input type="text" matInput placeholder="Last name"  [(ngModel)]="lname" />
+            </mat-form-field>
+        </td>
+    </tr>
+</table>
+
+
+<!-- <mat-form-field class="example-full-width">
+    Fname<input type="text"   />
+</mat-form-field>
+<mat-form-field class="example-full-width">
+    Lname <input type="text" [(ngModel)]="lname" />
+</mat-form-field> -->
+
+
+<!-- <div *ngIf="fname.length>3">{{ fname + lname}} </div> -->
+
+
+<div>
+        <h4>Select Dept</h4>
+        <mat-form-field>
+          <mat-label>Dept</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let item of listofdept">{{item}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+</div>
+<br>
+<div style="padding:20px">
+
+        <button color="primary" (click)="AddEmployee()">Add</button>
+</div> 
+        
