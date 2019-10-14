@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using testwebapi.Models.DB;
+
+namespace testwebapi.Controllers
+{
+    public interface IEmployeeRepo
+    {
+        
+        List<Employee> GetAllEmployees();
+
+        Employee GetAnEmployee(string id);
+     
+
+        string AddEmployee(Employee e);
+
+        string RemoveEmployee(string id);
+        
+    }
+}
